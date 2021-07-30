@@ -1,8 +1,6 @@
 import { memo } from 'react';
 //propsが変更されない限り再レンダリングしないようにするのがmemo
-const ChildArea = memo((props) => {
-  const { open, text, handleClose } = props;
-  const data = [...Array(2000).keys()];
+const ChildArea = memo(({ open, handleClose }) => {
   console.log('childArea is rendered!');
 
   //再レンダリングされるタイミング
