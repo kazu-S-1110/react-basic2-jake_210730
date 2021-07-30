@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useCallback } from 'react';
 import ChildArea from './components/ChildArea';
 import InlineStyle from './components/InlineStyle';
+import CssModules from './components/CssModules';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +26,7 @@ function App() {
         <button onClick={() => setOpen(!open)}>display</button>
         <ChildArea open={open} handleClose={handleClose} />
         <InlineStyle />
+        <CssModules />
       </header>
     </div>
   );
