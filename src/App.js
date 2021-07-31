@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react';
 import ChildArea from './components/ChildArea';
 import InlineStyle from './components/InlineStyle';
 import CssModules from './components/CssModules';
+import StyledJsx from './components/StyledJsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
         <ChildArea open={open} handleClose={handleClose} />
         <InlineStyle />
         <CssModules />
+        <StyledJsx />
       </header>
     </div>
   );
