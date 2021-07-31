@@ -5,6 +5,7 @@ import ChildArea from './components/ChildArea';
 import InlineStyle from './components/InlineStyle';
 import CssModules from './components/CssModules';
 import StyledJsx from './components/StyledJsx';
+import StyledComponents from './components/StyledComponents';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
         <InlineStyle />
         <CssModules />
         <StyledJsx />
+        <StyledComponents />
       </header>
     </div>
   );
