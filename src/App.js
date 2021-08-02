@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useCallback } from 'react';
 import ChildArea from './components/ChildArea';
@@ -9,6 +8,8 @@ import StyledComponents from './components/StyledComponents';
 import Emotion from './components/Emotion';
 import { BrowserRouter, Link } from 'react-router-dom';
 import Router from './router/Router';
+import { PrimaryButton } from './components/atoms/button/PrimaryButton';
+import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,7 +29,7 @@ function App() {
           {/* <p>{count}</p>
           <button onClick={countUp}>Count UP</button> */}
           <br />
-          <input type="text" onChange={(e) => setText(e.target.value)} />
+          {/* <input type="text" onChange={(e) => setText(e.target.value)} /> */}
           <button onClick={() => setOpen(!open)}>display</button>
           <ChildArea open={open} handleClose={handleClose} />
           {open && (
@@ -40,11 +41,18 @@ function App() {
               <Emotion />
             </>
           )}
-          <Link to="/">Home</Link>
-          <Link to="/page1">Page1</Link>
-          <Link to="/page2">Page2</Link>
+          <div className="nav">
+            <Link to="/">Home</Link>
+            <Link to="/page1">Page1</Link>
+            <Link to="/page2">Page2</Link>
+          </div>
           <Router />
         </header>
+
+        <main>
+          <PrimaryButton>test</PrimaryButton>
+          <SecondaryButton>test</SecondaryButton>
+        </main>
       </div>
     </BrowserRouter>
   );
