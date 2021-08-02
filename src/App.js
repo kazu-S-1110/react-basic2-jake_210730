@@ -10,6 +10,7 @@ import { BrowserRouter, Link } from 'react-router-dom';
 import Router from './router/Router';
 import { PrimaryButton } from './components/atoms/button/PrimaryButton';
 import { SecondaryButton } from './components/atoms/button/SecondaryButton';
+import { SearchInput } from './components/moreculres/SearchInput';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -52,6 +53,8 @@ function App() {
         <main>
           <PrimaryButton>test</PrimaryButton>
           <SecondaryButton>test</SecondaryButton>
+          <br />
+          <SearchInput />
         </main>
       </div>
     </BrowserRouter>
