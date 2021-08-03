@@ -12,6 +12,8 @@ import { PrimaryButton } from './components/atoms/button/PrimaryButton';
 import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 import { SearchInput } from './components/moreculres/SearchInput';
 import { UserCard } from './components/organisms/user/UserCard';
+import { HeaderOnly } from './components/templates/HeaderOnly';
+import { DefaultLayout } from './components/templates/DefaultLayout';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,41 +36,39 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          {/* <p>{count}</p>
+      <DefaultLayout>
+        <div className="App">
+          <HeaderOnly>
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            {/* <p>{count}</p>
           <button onClick={countUp}>Count UP</button> */}
-          <br />
-          {/* <input type="text" onChange={(e) => setText(e.target.value)} /> */}
-          <button onClick={() => setOpen(!open)}>display</button>
-          <ChildArea open={open} handleClose={handleClose} />
-          {open && (
-            <>
-              <InlineStyle />
-              <CssModules />
-              <StyledJsx />
-              <StyledComponents />
-              <Emotion />
-            </>
-          )}
-          <div className="nav">
-            <Link to="/">Home</Link>
-            <Link to="/page1">Page1</Link>
-            <Link to="/page2">Page2</Link>
-          </div>
-          <Router />
-        </header>
+            <br />
+            {/* <input type="text" onChange={(e) => setText(e.target.value)} /> */}
+            <button onClick={() => setOpen(!open)}>display</button>
+            <ChildArea open={open} handleClose={handleClose} />
+            {open && (
+              <>
+                <InlineStyle />
+                <CssModules />
+                <StyledJsx />
+                <StyledComponents />
+                <Emotion />
+              </>
+            )}
 
-        <main>
-          <PrimaryButton>test</PrimaryButton>
-          <SecondaryButton>test</SecondaryButton>
-          <br />
-          <SearchInput />
-          <br />
-          <UserCard user={user} />
-        </main>
-      </div>
+            <Router />
+          </HeaderOnly>
+
+          <main>
+            <PrimaryButton>test</PrimaryButton>
+            <SecondaryButton>test</SecondaryButton>
+            <br />
+            <SearchInput />
+            <br />
+            <UserCard user={user} />
+          </main>
+        </div>
+      </DefaultLayout>
     </BrowserRouter>
   );
 }
