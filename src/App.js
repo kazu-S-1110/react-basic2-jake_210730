@@ -11,6 +11,7 @@ import Router from './router/Router';
 import { PrimaryButton } from './components/atoms/button/PrimaryButton';
 import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 import { SearchInput } from './components/moreculres/SearchInput';
+import { UserCard } from './components/organisms/user/UserCard';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +22,16 @@ function App() {
   const [text, setText] = useState('');
   const [open, setOpen] = useState(false);
   const handleClose = useCallback(() => setOpen(false), []);
-  //関数をメモ化するのがusecallback
+  const user = {
+    name: 'hogehoge',
+    image: 'https://source.unsplash.com/random/200x200',
+    email: 'XXXXX@test.com',
+    tel: 'XXXXX',
+    address: 'hogehoge',
+    company: {
+      name: 'test.com',
+    },
+  };
   return (
     <BrowserRouter>
       <div className="App">
@@ -55,6 +65,8 @@ function App() {
           <SecondaryButton>test</SecondaryButton>
           <br />
           <SearchInput />
+          <br />
+          <UserCard user={user} />
         </main>
       </div>
     </BrowserRouter>
