@@ -1,12 +1,22 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { UserContext } from '../../providers/UserProvider';
+import { SecondaryButton } from '../atoms/button/SecondaryButton';
 import { SearchInput } from '../moreculres/SearchInput';
 import { UserCard } from '../organisms/user/UserCard';
 
 export const Users = () => {
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  const onClickSwitch = () => {
+    setUserInfo({ isAdmin: !userInfo.isAdmin });
+  };
   return (
     <SContainer>
       <h2>This is Users page!</h2>
       <SearchInput />
+
+      <SecondaryButton onClick={onClickSwitch}>Switch admin</SecondaryButton>
+
       <SUserArea>
         {users.map((user) => (
           <UserCard key={user.id} user={user} />
