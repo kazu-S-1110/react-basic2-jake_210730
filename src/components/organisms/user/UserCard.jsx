@@ -4,7 +4,7 @@ import { UserIconWithName } from '../../moreculres/user/UserIconWithName';
 export const UserCard = ({ user, isAdmin }) => {
   return (
     <Card>
-      <UserIconWithName user={user} isAdmin={isAdmin} />
+      <UserIconWithName user={user} />
       <SDl>
         <dt>mail</dt>
         <dd>{user.email}</dd>
