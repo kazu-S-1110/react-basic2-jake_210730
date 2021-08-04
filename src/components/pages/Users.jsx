@@ -4,12 +4,16 @@ import { UserContext } from '../../providers/UserProvider';
 import { SecondaryButton } from '../atoms/button/SecondaryButton';
 import { SearchInput } from '../moreculres/SearchInput';
 import { UserCard } from '../organisms/user/UserCard';
+import { useRecoilState } from 'recoil';
+import { userState } from '../store/userState';
 
 export const Users = () => {
-  const { userInfo, setUserInfo } = useContext(UserContext);
+  // const { userInfo, setUserInfo } = useContext(UserContext);
+  const [userInfo, setUserInfo] = useRecoilState(userState);
   const onClickSwitch = () => {
     setUserInfo({ isAdmin: !userInfo.isAdmin });
   };
+
   return (
     <SContainer>
       <h2>This is Users page!</h2>
