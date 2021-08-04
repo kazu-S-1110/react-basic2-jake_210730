@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { Card } from '../../atoms/card/Card';
 import { UserIconWithName } from '../../moreculres/user/UserIconWithName';
-export const UserCard = ({ user }) => {
+export const UserCard = ({ user, isAdmin }) => {
   return (
     <Card>
-      <UserIconWithName user={user} />
+      <UserIconWithName user={user} isAdmin={isAdmin} />
       <SDl>
         <dt>mail</dt>
         <dd>{user.email}</dd>
